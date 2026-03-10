@@ -11,6 +11,7 @@ dotenv.config();
 app.use(expressLayouts);
 app.set("view engine", "ejs");
 app.set("views", "views");
+app.set('layout', 'layout')
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static("public"));
 
@@ -26,8 +27,7 @@ app.use("/", storeRouter);
 // app.use("/auth", authRouter);
 // app.use("/products", productRouter);
 // app.use("/users", userRouter);
-const PORT = process.env.PORT
-
+const PORT = process.env.PORT || 5000;
 const startServer = async () => {
 
     await dbConnect();
