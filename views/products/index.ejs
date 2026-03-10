@@ -9,7 +9,9 @@
 
 <body>
     <h2>Products Admin page</h2>
+    <a href="/products/add">Add products</a>
     <ol>
+
         <% Products.forEach(product=>{ %>
             <li>
                 <%= product.name %>-<%= product.description%>-<% product.price %>-<%= products.imageUrl %>
