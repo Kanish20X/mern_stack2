@@ -40,10 +40,11 @@ app.use("/store", storeRouter);
 app.use("/", authenticateAdmin, homeRouter);
 app.use("/products", authenticateAdmin, productRouter);
 app.use("/users", authenticateAdmin, userRouter);
+const PORT = process.env.PORT || 5000;
 
 const startServer = async () => {
     await dbConnect();
-    app.listen(5000, () => {
+    app.listen(PORT, () => {
         console.log("Server Started");
     });
 };
